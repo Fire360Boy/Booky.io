@@ -8,15 +8,9 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/jqtree.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/gridster.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/editable.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -77,12 +71,6 @@
     </nav>
 
     <!-- JavaScripts -->
-    <script src="{{ asset("assets/js/jquery.min.js") }}"></script>
-    <script src="{{ asset("assets/js/bootstrap.min.js") }}"></script>
-    <script src="{{ asset("assets/js/jquery.cookie.js") }}"></script>
-    <script src="{{ asset("assets/js/gridster.min.js") }}"></script>
-    <script src="{{ asset("assets/js/mustache.min.js") }}"></script>
-    <script src="{{ asset("assets/js/editable.min.js") }}"></script>
     <script src="{{ asset("assets/js/main.js") }}"></script>
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

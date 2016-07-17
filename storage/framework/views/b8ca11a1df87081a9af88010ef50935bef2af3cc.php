@@ -8,15 +8,9 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/font-awesome.min.css')); ?>">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/main.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap-theme.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/jqtree.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/gridster.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/editable.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/styles.css')); ?>">
     <?php /* <link href="<?php echo e(elixir('css/app.css')); ?>" rel="stylesheet"> */ ?>
 
     <style>
@@ -77,12 +71,6 @@
     </nav>
 
     <!-- JavaScripts -->
-    <script src="<?php echo e(asset("assets/js/jquery.min.js")); ?>"></script>
-    <script src="<?php echo e(asset("assets/js/bootstrap.min.js")); ?>"></script>
-    <script src="<?php echo e(asset("assets/js/jquery.cookie.js")); ?>"></script>
-    <script src="<?php echo e(asset("assets/js/gridster.min.js")); ?>"></script>
-    <script src="<?php echo e(asset("assets/js/mustache.min.js")); ?>"></script>
-    <script src="<?php echo e(asset("assets/js/editable.min.js")); ?>"></script>
     <script src="<?php echo e(asset("assets/js/main.js")); ?>"></script>
 
     <?php /* <script src="<?php echo e(elixir('js/app.js')); ?>"></script> */ ?>
