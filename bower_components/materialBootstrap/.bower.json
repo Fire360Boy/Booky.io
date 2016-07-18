@@ -1,0 +1,35 @@
+{
+  "name": "materialBootstrap",
+  "version": "0.5.6",
+  "homepage": "https://github.com/throrin19/materialBootstrap",
+  "authors": [
+    "Benjamin Besse <benjamin.besse02@gmail.com>"
+  ],
+  "description": "Twitter bootstrap with Google Material design",
+  "keywords": [
+    "bootstrap"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/libs/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "animate.css": "~3.2.0"
+  },
+  "_release": "0.5.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.6",
+    "commit": "05c527bff0090af1e2dd37761d1925dc0f13d7f1"
+  },
+  "_source": "https://github.com/throrin19/materialBootstrap.git",
+  "_target": "^0.5.6",
+  "_originalSource": "material-bootstrap",
+  "_direct": true
+}

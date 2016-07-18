@@ -10,17 +10,32 @@ module.exports = function (grunt) {
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
         'bower_components/jquery.cookie/jquery.cookie.js',
         'bower_components/mustache.js/mustache.js',
+
+        // 'bower_components/gridster/src/jquery.coords.js',
+        // 'bower_components/gridster/src/jquery.collision.js',
+        // 'bower_components/gridster/src/utils.js',
+        // 'bower_components/gridster/src/jquery.draggable.js',
+        // 'bower_components/gridster/src/jquery.gridster.js',
+        // 'bower_components/gridster/src/jquery.gridster.extras.js',
         'bower_components/jquery-ui/jquery-ui.js',
-        'bower_components/lodash/lodash.js',
-        'bower_components/gridstack/dist/gridstack.js',
+        'assets/js/bootstrap-editable.js',
+        'bower_components/alertify.js/lib/alertify.js',
+        'bower_components/coffee-script/extras/coffee-script.js',
+        'bower_components/bootstrap-colorselector/lib/bootstrap-colorselector-0.2.0/js/bootstrap-colorselector.js',
+        
         'assets/js/coffee/main.js'
     ];
     const cssSrc = [
         'bower_components/jquery-ui/themes/sunny/jquery-ui.css',
         'bower_components/jquery-ui/themes/sunny/theme.css',
-        'bower_components/gridstack/dist/gridstack.css',
-        'bower_components/gridstack/dist/gridstack-extra.css',
-        'assets/css/**/*.css',
+
+        // 'bower_components/gridster/src/jquery.gridster.css',
+        'bower_components/jquery-ui-bootstrap/jquery.ui.theme.css',
+        'bower_components/alertify.js/themes/alertify.core.css',
+        'bower_components/alertify.js/themes/alertify.bootstrap.css',
+        'bower_components/bootstrap-colorselector/lib/bootstrap-colorselector-0.2.0/css/bootstrap-colorselector.css',
+
+        'assets/css/**/*.css'
     ];
     const sassSrc = {
         'assets/css/font-awesome.css': 'bower_components/font-awesome/scss/font-awesome.scss',
@@ -38,8 +53,8 @@ module.exports = function (grunt) {
                 src: jsSrc,
                 dest: 'public/assets/js/main.js'
             },
-            home:{
-                src:'assets/js/coffee/home.js',
+            home: {
+                src: 'assets/js/coffee/home.js',
                 dest: 'public/assets/js/home.js'
             }
         },
@@ -96,6 +111,12 @@ module.exports = function (grunt) {
                         flatten: true,
                         src: 'bower_components/jquery-ui/theme/sunny/images/*',
                         dest: 'public/assets/images'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: 'assets/img/*',
+                        dest: 'public/assets/img'
                     }
                 ]
             }
@@ -107,7 +128,7 @@ module.exports = function (grunt) {
 //                    unixNewlines: true,
 //                    check: true,
 //                    trace: true,
-                    sourcemap:'none'
+                    sourcemap: 'none'
                 },
                 files: sassSrc
             }
@@ -165,6 +186,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['coffee', 'sass', 'uglify', 'cssmin', 'copy', 'usebanner','watch']);
+    grunt.registerTask('default', ['coffee', 'sass', 'uglify', 'cssmin', 'copy', 'usebanner', 'watch']);
 
 };
