@@ -1,0 +1,52 @@
+.panel-heading h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    padding-top: 8px;
+}
+
+.ui-state-default {
+    background: transparent;
+    border: transparent;
+}
+
+#right-sortable, #left-sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#right-sortable > li, #left-sortable > li {
+    margin: 0 3px 3px 3px;
+    padding: 0.4em;
+    padding-left: 1.5em;
+    font-size: 1.4em;
+    height: 50px;
+}
+
+#right-sortable li span, #left-sortable li span {
+    position: absolute;
+    margin-left: -1.3em;
+}
+
+.ui-sortable-placeholder {
+    border: 3px dashed #aaa;
+    height: 200px;
+    width: 100%;
+    background: #c2a17d;
+}
+
+.sortable-item > li {
+    list-style: url('.') none;
+
+    border: solid;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+#btnAddBox{
+    position: fixed;
+    top: 25%;
+}

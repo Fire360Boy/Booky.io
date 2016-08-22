@@ -12,8 +12,10 @@
 */
 
 Route::get('/' , function () {
-	return view('welcome');
+	return view('home');
 });
+
+Route::post('data/save','DataController@saveData');
 
 Route::get('user/activation/{token}' , 'Auth\AuthController@activateUser')->name('user.activate');
 
@@ -33,4 +35,4 @@ Route::post('password/reset', 'Auth\PasswordController@reset');
 
 //Route::auth();
 
-Route::get('/home' , 'HomeController@index');
+Route::get('/dashboards' , 'DashboardsController@index');

@@ -22,7 +22,19 @@ module.exports = function (grunt) {
         'bower_components/alertify.js/lib/alertify.js',
         'bower_components/coffee-script/extras/coffee-script.js',
         'bower_components/bootstrap-colorselector/lib/bootstrap-colorselector-0.2.0/js/bootstrap-colorselector.js',
-        
+        // 'bower_components/jsonml/jsonml-html.js',
+        // 'bower_components/jsonml/jsonml-dom.js',
+        // 'bower_components/jsonml/jsonml-xml.js',
+        // 'bower_components/jsonml/jsonml-utils.js',
+        // 'bower_components/jsonml/jsonml-jbst.js',
+        'bower_components/domjson/dist/domJSON.js',
+        'bower_components/jquery.easing/jquery.easing.js',
+        'bower_components/jquery.easing/jquery.easing.compatibility.js',
+        'bower_components/scrollreveal/src/scrollreveal.js',
+        'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+        'bower_components/tether/dist/js/tether.js',
+        // 'bower_components/MDB/js/mdb.js',
+
         'assets/js/coffee/main.js'
     ];
     const cssSrc = [
@@ -34,6 +46,11 @@ module.exports = function (grunt) {
         'bower_components/alertify.js/themes/alertify.core.css',
         'bower_components/alertify.js/themes/alertify.bootstrap.css',
         'bower_components/bootstrap-colorselector/lib/bootstrap-colorselector-0.2.0/css/bootstrap-colorselector.css',
+        // 'bower_components/MDB/css/mdb.css',
+        // 'bower_components/MDB/css/style.css',
+        'bower_components/magnific-popup/dist/magnific-popup.css',
+        'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',
+        'https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic',
 
         'assets/css/**/*.css'
     ];
@@ -41,28 +58,70 @@ module.exports = function (grunt) {
         'assets/css/font-awesome.css': 'bower_components/font-awesome/scss/font-awesome.scss',
         'assets/css/bootstrap.css': 'bower_components/bootstrap-sass/assets/stylesheets/application.scss',
     };
+
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             options: {
                 banner: '/*\nCreated by : Fire360Boy\nEmail : Fire360Boy@gmail.com\nStrat Script: */',
-                preserveComments: false,
+                preserveComments: true,
                 footer: '\n// Finish Script.'
             },
-            build: {
-                src: jsSrc,
-                dest: 'public/assets/js/main.js'
+
+            layout: {
+                src: [
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/jquery-migrate-official/dist/jquery-migrate.js',
+                    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+                    'bower_components/jquery.cookie/jquery.cookie.js',
+                    'bower_components/mustache.js/mustache.js',
+                    'bower_components/jquery-ui/jquery-ui.js',
+                    // 'bower_components/coffee-script/extras/coffee-script.js',
+                    'bower_components/tether/dist/js/tether.js',
+                    'bower_components/MDB/js/mdb.js',
+
+                    'assets/js/coffee/layout.js',
+                    'assets/js/layout.js',
+                ],
+                dest: 'public/assets/js/layout.js'
             },
+
+            dashboards: {
+                src: [
+                    'bower_components/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.js',
+                    'bower_components/alertify.js/lib/alertify.js',
+                    'bower_components/bootstrap-colorselector/lib/bootstrap-colorselector-0.2.0/js/bootstrap-colorselector.js',
+                    'bower_components/domjson/dist/domJSON.js',
+                    'assets/js/coffee/dashboards.js',
+                    'assets/js/dashbords.js'
+                ],
+                dest: 'public/assets/js/dashboards.js'
+            },
+
             home: {
-                src: 'assets/js/coffee/home.js',
+                src: [
+                    'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+                    'bower_components/jquery.easing/jquery.easing.js',
+                    'bower_components/jquery.easing/jquery.easing.compatibility.js',
+                    'bower_components/scrollreveal/src/scrollreveal.js',
+                    'assets/js/coffee/home.js',
+                    'assets/js/home.js',
+                ],
                 dest: 'public/assets/js/home.js'
             }
+
         },
         coffee: {
-            main: {
+            layout: {
                 bare: true,
-                src: 'assets/coffee/main.coffee',
-                dest: 'assets/js/coffee/main.js'
+                src: 'assets/coffee/layout.coffee',
+                dest: 'assets/js/coffee/layout.js'
+            },
+            dashboards: {
+                bare: true,
+                src: 'assets/coffee/dashboards.coffee',
+                dest: 'assets/js/coffee/dashboards.js'
             },
             home: {
                 bare: true,
@@ -76,10 +135,40 @@ module.exports = function (grunt) {
                 roundingPrecision: -1,
                 keepSpecialComments: 0
             },
-            target: {
+            layout: {
                 files: {
-                    'public/assets/css/styles.css': cssSrc
+                    'public/assets/css/layout.css': [
+                        'bower_components/jquery-ui/themes/sunny/jquery-ui.css',
+                        'bower_components/jquery-ui/themes/sunny/theme.css',
+                        'bower_components/jquery-ui-bootstrap/jquery.ui.theme.css',
+                        'bower_components/MDB/css/mdb.css',
+                        'bower_components/MDB/css/style.css',
+                        'assets/css/font-awesome.css',
+                        'assets/css/bootstrap.css',
+                        'bower_components/tether/dist/css/tether.css',
+                        'assets/css/layout.css'
+                    ]
                 }
+            },
+            dashboards: {
+                src: [
+                    'bower_components/alertify.js/themes/alertify.core.css',
+                    'bower_components/alertify.js/themes/alertify.bootstrap.css',
+                    'bower_components/bootstrap-colorselector/lib/bootstrap-colorselector-0.2.0/css/bootstrap-colorselector.css',
+                    'bower_components/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css',
+                    'assets/css/dashboards.css'
+                ],
+                dest: 'public/assets/css/dashboards.css'
+            },
+            home: {
+                src: [
+
+                    'bower_components/magnific-popup/dist/magnific-popup.css',
+                    'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',
+                    'https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic',
+                    'assets/css/home.css'
+                ],
+                dest: 'public/assets/css/home.css'
             }
         },
         ugly: {
@@ -114,9 +203,33 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
+                        cwd: 'assets/img/',
+                        src: '**',
+                        dest: 'public/assets/img/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'assets/img/',
+                        src: '**',
+                        dest: 'public/assets/images/'
+                    },
+                    {
+                        expand: true,
                         flatten: true,
-                        src: 'assets/img/*',
-                        dest: 'public/assets/img'
+                        src: 'bower_components/jquery-ui-bootstrap/images/*',
+                        dest: 'public/assets/images'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: 'bower_components/x-editable/dist/bootstrap3-editable/img/*',
+                        dest: 'public/assets/images'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/MDB/font/roboto',
+                        src: '**',
+                        dest: 'public/assets/font/roboto'
                     }
                 ]
             }
@@ -146,7 +259,7 @@ module.exports = function (grunt) {
         },
         watch: {
             js: {
-                files: jsSrc,
+                files: '**/*.js',
                 tasks: ['uglify'],
                 options: {
                     spawn: false
@@ -160,7 +273,7 @@ module.exports = function (grunt) {
                 }
             },
             css: {
-                files: cssSrc,
+                files: '**/*.css',
                 tasks: ['cssmin', 'usebanner'],
                 options: {
                     spawn: false
@@ -186,6 +299,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['coffee', 'sass', 'uglify', 'cssmin', 'copy', 'usebanner', 'watch']);
+    grunt.registerTask('default', ['coffee', 'sass', 'uglify', 'cssmin', 'copy', 'usebanner']);
+    // grunt.registerTask('default', ['coffee', 'sass', 'uglify', 'cssmin', 'copy', 'usebanner','watch']);
 
 };

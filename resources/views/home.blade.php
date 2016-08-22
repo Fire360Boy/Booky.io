@@ -1,139 +1,235 @@
 @extends('layouts.app')
 
 @section('content')
-    <script src="{{ asset("assets/js/home.js") }}" ></script >
+    <header >
+        <div class="header-content" >
+            <div class="header-content-inner" >
+                <h1 id="homeHeading" >Store your favorite bookmarks online.</h1 >
+                <hr >
+                <h2 >Available Anywhere.</h2 >
+                <h3 >Private. Customizable. Fast.</h3 >
+                <br ><br >
+                <div class="btn-group" >
+                    <a href="{{ url('/login') }}" class="btn btn-success btn-xl page-scroll" >Sign In</a >
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll" >Learn More</a >
+                    <a href="{{ url('/register') }}" class="btn btn-danger btn-xl page-scroll" >Sign Up</a >
+                </div >
 
-    <div class="container" >
-        <div class="row" >
-            <div class="col-md-10 col-md-offset-1" >
-                <div class="panel panel-default" >
-                    <div class="panel-heading" >Dashboard</div >
+            </div >
+        </div >
+    </header >
+    <section class="bg-primary" id="about" >
+        <div class="container" >
+            <div class="row" >
+                <div class="col-lg-8 col-lg-offset-2 text-center" >
+                    <h2 class="section-heading" >Your bookmarks available everywhere.</h2 >
+                    <hr class="light" >
+                    <br >
+                    <div class="col-sm-12" >
 
-                    <div class="panel-body" >
-                        You are logged in!
+                    </div >
+                    <img src="{{ asset('assets/images/devices.png') }}" class="img-responsive col-xs-6 col-xs-offset-3" >
+                    <div class="clearfix" ></div >
+
+                    <br ><br ><br >
+                    <div class="col-sm-12" >
+                        <div class="col-sm-6 text-faded pull-left" >
+                            <h1 class="" >Fast bookmark manager.</h1 >
+                            <p class="text-justify" >With booky you can store your favorite links online on your private and
+                                                     customizable bookmarks page. All your bookmarks can be organized into
+                                                     categories and dashboards.</p >
+                        </div >
+                        <div class="col-sm-6 text-faded pull-right" >
+                            <h1 class="" >Full mobile support.</h1 >
+                            <p class="text-justify" >With booky you can store your favorite links online on your private and
+                                                     customizable bookmarks page. All your bookmarks can be organized into
+                                                     categories and dashboards.</p >
+                        </div >
+                    </div >
+
+                    <br >
+
+                    <a href="#statics" class="page-scroll btn btn-group-justified btn-info btn-xl sr-button" >Show Statics
+                                                                                                              !!!</a >
+                </div >
+            </div >
+        </div >
+    </section >
+
+    <section id="statics" >
+        <div class="container" >
+            <div class="row" >
+                <div class="col-lg-12 text-center" >
+                    <h2 class="section-heading" >Statics</h2 >
+                    <hr class="primary" >
+                </div >
+            </div >
+        </div >
+        <div class="container" >
+            <div class="row" >
+                <div class="col-lg-3 col-md-6 text-center" >
+                    <div class="service-box" >
+                        <i class="fa fa-4x fa-users text-primary sr-icons" ></i >
+                        <h3 >people using booky</h3 >
+                        <p class="text-muted" >2451</p >
+                    </div >
+                </div >
+                <div class="col-lg-3 col-md-6 text-center" >
+                    <div class="service-box" >
+                        <i class="fa fa-4x fa-bookmark text-primary sr-icons" ></i >
+                        <h3 >bookmarks saved</h3 >
+                        <p class="text-muted" >738154</p >
+                    </div >
+                </div >
+                <div class="col-lg-3 col-md-6 text-center" >
+                    <div class="service-box" >
+                        <i class="glyphicon fa-4x glyphicon-certificate text-primary sr-icons" ></i >
+                        <h3 >categories created</h3 >
+                        <p class="text-muted" >57942</p >
+                    </div >
+                </div >
+                <div class="col-lg-3 col-md-6 text-center" >
+                    <div class="service-box" >
+                        <i class="fa fa-4x fa-tachometer text-primary sr-icons" ></i >
+                        <h3 >dashboards in use</h3 >
+                        <p class="text-muted" >3982</p >
                     </div >
                 </div >
             </div >
         </div >
-        <div class="row" >
-
-            <button class="btn btn-success" id="btnAddBox" data-toggle="modal" data-target="#mdlCategory" >Add Box
-            </button >
-            <button class="btn btn-success" id="serializeBtn" >Serialize</button >
-            <br ><br >
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="mdlCategory" tabindex="-1" role="dialog" >
-                <div class="modal-dialog" role="document" >
-                    <div class="modal-content" >
-                        <div class="modal-header" >
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span
-                                        aria-hidden="true" >&times;</span ></button >
-                            <h4 class="modal-title" id="myModalLabel" >Please Enter Category Information</h4 >
-                        </div >
-                        <div class="modal-body" >
-                            <form >
-                                <div class="form-group" >
-                                    <input type="text" class="form-control" id="categoryName"
-                                           placeholder="Category Name" >
+        <br ><br ><br ><br ><br ><br ><br >
+        <div class="container-fluid" >
+            <div class="row no-gutter popup-gallery" >
+                <div class="col-lg-4 col-sm-6" >
+                    <a href="{{ asset('assets/images/portfolio/fullsize/1.jpg') }}" class="portfolio-box" >
+                        <img src="{{ asset('assets/images/portfolio/thumbnails/1.jpg') }}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption" >
+                            <div class="portfolio-box-caption-content" >
+                                <div class="project-category text-faded" >
+                                    Test Title
                                 </div >
-                                <div class="form-group">
-                                    <label for="categoryColorSelector" >Choose category color : </label >
-
-                                    <select id="categoryColorSelector">
-                                        <option value="0" data-color="#FF0000">Red</option>
-                                        <option value="1" data-color="#0000FF" selected="selected">Blue</option>
-                                        <option value="2" data-color="#808080">Gray</option>
-                                        <option value="3" data-color="#FF8800">Orange</option>
-                                        <option value="4" data-color="#00FF00">Green</option>
-
-                                    </select>
-                                </div>
-                            </form >
+                                <div class="project-name" >
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </div >
+                            </div >
                         </div >
-                        <div class="modal-footer" >
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button >
-                            <button type="button" class="btn btn-primary" id="btnModalAdd" >Add Category</button >
+                    </a >
+                </div >
+                <div class="col-lg-4 col-sm-6" >
+                    <a href="{{ asset('assets/images/screen-default.gif') }}" class="portfolio-box" >
+
+                        <img src="{{ asset('assets/images/Screen_Default.gif') }}" class="img-responsive " alt="" >
+
+
+                        <div class="portfolio-box-caption" >
+                            <div class="portfolio-box-caption-content" >
+                                <div class="project-category text-faded" >
+                                    How To Use
+                                </div >
+                                <div class="project-name" >
+                                    Click To See In Large-Size
+                                </div >
+                            </div >
                         </div >
-                    </div >
+                    </a >
+                </div >
+                <div class="col-lg-4 col-sm-6" >
+                    <a href="{{ asset('assets/images/portfolio/fullsize/3.jpg') }}" class="portfolio-box" >
+                        <img src="{{ asset('assets/images/portfolio/thumbnails/3.jpg') }}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption" >
+                            <div class="portfolio-box-caption-content" >
+                                <div class="project-category text-faded" >
+                                    Test Title
+                                </div >
+                                <div class="project-name" >
+                                    Lorem ipsum dolor sit amet, consectetur.
+                                </div >
+                            </div >
+                        </div >
+                    </a >
+                </div >
+                <div class="col-lg-4 col-sm-6" >
+                    <a href="{{ asset('assets/images/portfolio/fullsize/4.jpg') }}" class="portfolio-box" >
+                        <img src="assets/images/portfolio/thumbnails/4.jpg" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption" >
+                            <div class="portfolio-box-caption-content" >
+                                <div class="project-category text-faded" >
+                                    Test Title
+                                </div >
+                                <div class="project-name" >
+                                    Lorem ipsum dolor sit.
+                                </div >
+                            </div >
+                        </div >
+                    </a >
+                </div >
+                <div class="col-lg-4 col-sm-6" >
+                    <a href="{{ asset('assets/images/portfolio/fullsize/5.jpg') }}" class="portfolio-box" >
+                        <img src="assets/images/portfolio/thumbnails/5.jpg" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption" >
+                            <div class="portfolio-box-caption-content" >
+                                <div class="project-category text-faded" >
+                                    Test Title
+                                </div >
+                                <div class="project-name" >
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                </div >
+                            </div >
+                        </div >
+                    </a >
+                </div >
+                <div class="col-lg-4 col-sm-6" >
+                    <a href="{{ asset('assets/images/portfolio/fullsize/6.jpg') }}" class="portfolio-box" >
+                        <img src="assets/images/portfolio/thumbnails/6.jpg" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption" >
+                            <div class="portfolio-box-caption-content" >
+                                <div class="project-category text-faded" >
+                                    Test Title
+                                </div >
+                                <div class="project-name" >
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque maxime minus
+                                    molestias pariatur!
+                                </div >
+                            </div >
+                        </div >
+                    </a >
                 </div >
             </div >
-
-            <script >
-                var boxTitle;
-                var boxContent;
-                var box = `
-            <div class="col-xs-5" >
-                <div class="panel panel-success" >
-                    <div class="panel-heading" >
-                        <h3 class="panel-title  pull-left " data-type="text" data-title="Please Enter a Title : " >
-                            ${boxTitle}
-                        </h3 >
-                        <div class="btn-group pull-right " >
-                            <button class="btn btn-sm btn-info glyphicon glyphicon-arrow-left" ></button >
-                            <button class="btn btn-sm btn-info glyphicon glyphicon-arrow-right" ></button >
-                            <button class="btn btn-sm btn-warning glyphicon glyphicon-arrow-up" ></button >
-                            <button class="btn btn-sm btn-warning glyphicon glyphicon-arrow-down" ></button >
-                            <button class="btn btn-sm btn-danger glyphicon glyphicon-trash btnRemove" ></button >
-                        </div >
-                        <div class="clearfix" ></div >
-                    </div >
-                    <div class="panel-body" >
-                        ${boxContent}
-                    </div >
-                </div >
-            </div >                
-`;
-
-
-                $(function () {
-                    $('#categoryColorSelector').colorselector();
-
-                    $.fn.editable.defaults.mode = 'inline';
-                    $('h3.panel-title.pull-left').editable();
-
-                    $('.btnRemove').click(function () {
-                        var title = $(this).parent().prev().text().trim();
-                        var obj = $(this).closest('.panel').parent();
-                        alertify.confirm(`Are you sure to delete : "${title}"`, function (e) {
-                            if (e) {
-                                obj.remove();
-                                alertify.success(`"${title}" Removed.`);
-                            } else {
-                                alertify.error(`Aborted to Delete : "${title}".`);
-                            }
-                        });
-
-                    });
-
-                    $('btnModalAdd').click(function () {
-                        alert("sdf");
-                    });
-
-                });
-                $(".collapse").on('hidden.bs.collapse', function () {
-                    console.log($(this).paren);
-                    $(this).removeClass('glyphicon-collapse-up');
-                    $(this).addClass('glyphicon-collapse-down');
-                });
-
-
-            </script >
-
-            <style >
-                .panel-heading h3 {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    line-height: normal;
-                    padding-top: 8px;
-                }
-            </style >
-
-
         </div >
-    </div >
+    </section >
 
+    <section class="no-padding" id="portfolio" >
 
+    </section >
+
+    <section id="contact" class="bg-dark" >
+        <div class="container" >
+            <div class="row" >
+                <div class="col-lg-12 text-center" >
+                    <h2 class="section-heading" >Social Network</h2 >
+                    <hr class="primary" >
+                    <p >Follow our on social</p >
+                </div >
+                <br ><br ><br ><br ><br ><br ><br ><br >
+                <div class="col-xs-6 col-xs-offset-5" >
+                    <ul class="social" >
+                        <li class="facebook" ><a href="http://facebook.com/" ><i class="fa fa-facebook fa-3x" ></i ></a >
+                        </li >
+                        <li class="twitter" ><a href="http://twitter.com/" ><i class="fa fa-twitter fa-3x" ></i ></a ></li >
+                        <li class="pinterest" ><a href="http://www.pinterest.com/" ><i
+                                        class="fa fa-pinterest-p fa-3x" ></i ></a ></li >
+                        <li class="google" ><a href="https://www.plus.google.com/" ><i
+                                        class="fa fa-google-plus-circle fa-3x" ></i ></a ></li >
+                    </ul >
+                </div >
+                <br ><br >
+            </div >
+        </div >
+    </section >
+@endsection
+@section('css')
+    <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+@endsection
+@section('js')
+    <script src="{{ asset("assets/js/home.js") }}" ></script >
 @endsection

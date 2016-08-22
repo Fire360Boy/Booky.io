@@ -24,16 +24,16 @@ jQuery.migrateVersion = "3.0.0";
 
 	// Need jQuery 3.0.0+ and no older Migrate loaded
 	if ( !jQuery || rbadVersions.test( jQuery.fn.jquery ) ) {
-		log( "JQMIGRATE: jQuery 3.0.0+ REQUIRED" );
+		//log( "JQMIGRATE: jQuery 3.0.0+ REQUIRED" );
 	}
 	if ( jQuery.migrateWarnings ) {
-		log( "JQMIGRATE: Migrate plugin loaded multiple times" );
+		//log( "JQMIGRATE: Migrate plugin loaded multiple times" );
 	}
 
 	// Show a message on the console so devs know we're active
-	log( "JQMIGRATE: Migrate is installed" +
-		( jQuery.migrateMute ? "" : " with logging active" ) +
-		", version " + jQuery.migrateVersion );
+	// log( "JQMIGRATE: Migrate is installed" +
+	// 	( jQuery.migrateMute ? "" : " with logging active" ) +
+	// 	", version " + jQuery.migrateVersion );
 
 } )();
 
@@ -54,17 +54,18 @@ jQuery.migrateReset = function() {
 };
 
 function migrateWarn( msg ) {
-	var console = window.console;
-	if ( !warnedAbout[ msg ] ) {
-		warnedAbout[ msg ] = true;
-		jQuery.migrateWarnings.push( msg );
-		if ( console && console.warn && !jQuery.migrateMute ) {
-			console.warn( "JQMIGRATE: " + msg );
-			if ( jQuery.migrateTrace && console.trace ) {
-				console.trace();
-			}
-		}
-	}
+	return true;
+	// var console = window.console;
+	// if ( !warnedAbout[ msg ] ) {
+	// 	warnedAbout[ msg ] = true;
+	// 	jQuery.migrateWarnings.push( msg );
+	// 	if ( console && console.warn && !jQuery.migrateMute ) {
+	// 		console.warn( "JQMIGRATE: " + msg );
+	// 		if ( jQuery.migrateTrace && console.trace ) {
+	// 			console.trace();
+	// 		}
+	// 	}
+	// }
 }
 
 function migrateWarnProp( obj, prop, value, msg ) {
